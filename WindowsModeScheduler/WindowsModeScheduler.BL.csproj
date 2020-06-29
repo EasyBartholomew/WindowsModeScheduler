@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F923B8C-1974-4728-8A0A-34AFB8E6818B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WindowsModeScheduler.BL</RootNamespace>
+    <AssemblyName>WindowsModeScheduler</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Management\ActionForce.cs" />
+    <Compile Include="Management\API\ExitWindows.cs" />
+    <Compile Include="Management\API\ShutdownReason.cs" />
+    <Compile Include="Management\API\WinAPIShell.cs" />
+    <Compile Include="Management\InstantaneousModeAction.cs" />
+    <Compile Include="Management\ModeAction.cs" />
+    <Compile Include="Management\ModeActionChangedEventArgs.cs" />
+    <Compile Include="Management\PlannedModeAction.cs" />
+    <Compile Include="Management\SpanModeAction.cs" />
+    <Compile Include="Management\WindowsMode.cs" />
+    <Compile Include="Management\WindowsModeManager.cs" />
+    <Compile Include="Time\ExtendedTimer.cs" />
+    <Compile Include="Time\ITimer.cs" />
+    <Compile Include="Time\TimerFactory.cs" />
+    <Compile Include="Time\TimerState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
